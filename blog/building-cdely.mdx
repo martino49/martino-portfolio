@@ -1,0 +1,70 @@
+---
+title: "Building Cdely: A Multi-Vendor E-Commerce Platform"
+date: "2026-08-05"
+tags: ["React", "Node.js", "PostgreSQL", "E-Commerce"]
+cover: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop"
+excerpt: "How I built a full multi-vendor e-commerce platform with product management, shopping cart, and order processing."
+readingTime: 7
+---
+
+## The Vision
+
+Cdely is a multi-vendor e-commerce platform where multiple sellers can list products and customers can browse, add to cart, and checkout. Think of it as a smaller-scale Jumia or Amazon marketplace.
+
+![Online shopping website on laptop screen](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop)
+
+## Tech Stack
+
+- **Frontend:** React with Vite, Tailwind CSS
+- **Backend:** Node.js + Express
+- **Database:** PostgreSQL with Prisma ORM
+- **Auth:** JWT with role-based access
+- **Deployment:** Vercel (frontend) + Render (backend)
+
+## Key Features
+
+### 1. Multi-Vendor System
+
+Each vendor has their own dashboard to manage products, view orders, and track sales. The admin can approve vendors and monitor the marketplace.
+
+![Vendor dashboard showing product management](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+### 2. Product Management
+
+Vendors can add products with images, descriptions, prices, and inventory counts. Products are organized by categories.
+
+![Product listing page with multiple items](https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800&h=400&fit=crop)
+
+### 3. Shopping Cart & Checkout
+
+Customers can add products from multiple vendors to a single cart. The checkout process handles payment and creates separate orders per vendor.
+
+![Shopping cart interface on screen](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop)
+
+### 4. Order Processing
+
+Orders go through a lifecycle: pending → confirmed → shipped → delivered. Both vendors and customers can track order status.
+
+![Order tracking and shipping status](https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&h=400&fit=crop)
+
+## Database Design
+
+The PostgreSQL schema handles:
+- Users with roles (customer, vendor, admin)
+- Products with categories and images
+- Orders with line items from multiple vendors
+- Inventory tracking
+
+![Database schema diagram](https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop)
+
+## Challenges
+
+- **Multi-vendor cart:** Splitting a single cart into per-vendor orders during checkout
+- **Image uploads:** Handling multiple product images with proper compression
+- **Inventory management:** Preventing overselling when multiple customers buy simultaneously
+
+![Code review and debugging session](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop)
+
+## What I Learned
+
+Building Cdely taught me about complex database relationships, transaction management, and the intricacies of multi-vendor marketplace logic.

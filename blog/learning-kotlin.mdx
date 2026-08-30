@@ -1,0 +1,72 @@
+---
+title: "Learning Kotlin for Android Development"
+date: "2026-07-28"
+tags: ["Kotlin", "Android", "Mobile"]
+cover: "https://images.unsplash.com/photo-1617802680952-4fef0d303ea0?w=1200&h=600&fit=crop"
+excerpt: "My journey learning Kotlin and building native Android applications with Jetpack Compose and modern Android architecture."
+readingTime: 4
+---
+
+## Why Kotlin?
+
+After building web apps with React and Node.js, I wanted to expand into native mobile development. Kotlin is Google's recommended language for Android — it's modern, concise, and interoperable with Java.
+
+![Android Studio IDE with Kotlin code](https://images.unsplash.com/photo-1617802680952-4fef0d303ea0?w=800&h=400&fit=crop)
+
+## Getting Started
+
+The transition from JavaScript/TypeScript to Kotlin was smoother than expected. Both languages share:
+- Null safety
+- Higher-order functions
+- Data classes
+- Coroutines (similar to async/await)
+
+![Learning programming concept with books](https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop)
+
+## Jetpack Compose
+
+Jetpack Compose is Android's modern UI toolkit — declarative like React. Instead of XML layouts, you build UIs with composable functions.
+
+```kotlin
+@Composable
+fun Greeting(name: String) {
+    Text(
+        text = "Hello, $name!",
+        style = MaterialTheme.typography.headlineMedium
+    )
+}
+```
+
+![Jetpack Compose UI components on phone](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop)
+
+## MVVM Architecture
+
+I adopted the MVVM (Model-View-ViewModel) pattern with:
+- **Room:** Local database
+- **Retrofit:** API calls
+- **ViewModel:** State management
+- **LiveData/StateFlow:** Reactive UI updates
+
+![Android app architecture diagram](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop)
+
+## First App: FinTrack
+
+My first Android app is FinTrack — a personal finance tracker that syncs with the FinMate web app's API. It features:
+- Dashboard with spending charts
+- Expense entry with categories
+- Budget tracking
+- Offline support with Room
+
+![Mobile finance app interface](https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=400&fit=crop)
+
+## Challenges
+
+- **Learning curve:** Android's build system (Gradle) is complex
+- **State management:** Compose's state handling is different from React's
+- **Testing:** Unit testing ViewModels and UI testing with Compose
+
+![Debugging Android app on device](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop)
+
+## What I Learned
+
+Kotlin and Android development expanded my understanding of mobile architecture, offline-first design, and native platform capabilities.

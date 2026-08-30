@@ -1,0 +1,67 @@
+---
+title: "Building EDU LMS: A Secure Learning Management System"
+date: "2026-07-12"
+tags: ["React", "Node.js", "PostgreSQL", "LMS"]
+cover: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1200&h=600&fit=crop"
+excerpt: "How I built a secure learning management system with JWT authentication, role-based access, and course management."
+readingTime: 5
+---
+
+## The Challenge
+
+EDU LMS is a learning management system built for educational institutions. The challenge was creating a secure platform with proper authentication and role-based access for students, instructors, and administrators.
+
+![Students using laptops in classroom](https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=400&fit=crop)
+
+## Tech Stack
+
+- **Frontend:** React with Tailwind CSS
+- **Backend:** Node.js + Express
+- **Database:** PostgreSQL
+- **Auth:** JWT with refresh tokens
+- **File Storage:** Cloudinary
+
+## Security Features
+
+### 1. JWT Authentication
+
+The system uses JWT tokens with refresh token rotation. Access tokens expire after 15 minutes, and refresh tokens are stored httpOnly cookies.
+
+![Security concept with lock icon](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop)
+
+### 2. Role-Based Access Control
+
+Three roles with different permissions:
+- **Admin:** Full system access, user management
+- **Instructor:** Course creation, student management
+- **Student:** Course enrollment, content access
+
+![User role management interface](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+### 3. Input Validation
+
+All user inputs are validated with Joi schemas to prevent injection attacks and ensure data integrity.
+
+![Code review and validation logic](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop)
+
+## Course Management
+
+Instructors can:
+- Create and edit courses with modules
+- Upload videos, documents, and quizzes
+- Track student progress
+- Grade assignments
+
+![Online course dashboard with progress tracking](https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&h=400&fit=crop)
+
+## Challenges
+
+- **Token refresh:** Implementing secure refresh token rotation
+- **File uploads:** Handling large video files with progress tracking
+- **Real-time updates:** WebSocket connections for live notifications
+
+![WebSocket connection monitoring](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop)
+
+## What I Learned
+
+EDU LMS deepened my understanding of security patterns, file handling, and building production-ready authentication systems.

@@ -1,0 +1,80 @@
+---
+title: "Payment Integration Guide: Paystack, PayPal, and Stripe"
+date: "2026-07-05"
+tags: ["Node.js", "Payment", "API"]
+cover: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&h=600&fit=crop"
+excerpt: "A comparison of integrating Paystack, PayPal, and Stripe in Node.js applications — with code examples and lessons learned."
+readingTime: 8
+---
+
+## Payment Gateway Comparison
+
+Each payment gateway has its strengths:
+- **Paystack:** Best for African markets, supports M-Pesa
+- **PayPal:** Global reach, buyer protection
+- **Stripe:** Developer-friendly, extensive documentation
+
+![Multiple payment terminals and card readers](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop)
+
+## Paystack Integration
+
+Paystack is popular in Africa. The integration flow:
+1. Initialize transaction with amount and email
+2. Redirect to Paystack's hosted checkout
+3. Handle callback with reference
+4. Verify transaction on your server
+
+![African fintech mobile payment](https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&h=400&fit=crop)
+
+## PayPal Integration
+
+PayPal uses OAuth 2.0 and REST APIs:
+1. Create an order on the frontend
+2. Approve with PayPal button
+3. Capture the order on your server
+4. Handle webhooks for events
+
+![PayPal checkout interface](https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop)
+
+## Stripe Integration
+
+Stripe is the most developer-friendly:
+1. Create a checkout session
+2. Redirect to Stripe's hosted page
+3. Handle success/cancel URLs
+4. Use webhooks for async events
+
+![Stripe dashboard and code](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop)
+
+## Common Patterns
+
+All three gateways share similar patterns:
+- **Initialization:** Create a payment intent/order
+- **Confirmation:** User completes payment
+- **Verification:** Server-side verification
+- **Webhooks:** Handle async events
+
+![Payment flow diagram](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+## Error Handling
+
+Payment integrations require robust error handling:
+- Network timeouts
+- Duplicate transactions
+- Failed payments
+- Refund processing
+
+![Error monitoring dashboard](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+## Security Considerations
+
+- Never store card details on your server
+- Use webhook signatures to verify requests
+- Implement idempotency for all payment operations
+- Log everything for audit trails
+
+![Security audit and compliance](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop)
+
+## What I Learned
+
+Integrating multiple payment gateways taught me about API design patterns, security best practices, and handling financial transactions reliably.

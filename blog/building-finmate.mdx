@@ -1,0 +1,67 @@
+---
+title: "Building FinMate: A Full-Stack Finance Platform"
+date: "2026-08-15"
+tags: ["React", "Node.js", "MySQL", "Full-Stack"]
+cover: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop"
+excerpt: "How I built a role-based finance management system with expense tracking, budgets, and savings goals — from concept to deployment."
+readingTime: 6
+---
+
+## The Idea
+
+FinMate started as a personal project. I needed a way to track my expenses, set budgets, and manage savings goals — but most finance apps were either too complex or too simple.
+
+![Dashboard with charts and graphs showing financial data](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop)
+
+I wanted to build something that could work for both individuals and teams, with proper role-based access control.
+
+## Tech Stack
+
+- **Frontend:** EJS templates with Chart.js for visualizations
+- **Backend:** Node.js + Express
+- **Database:** MySQL with auto-schema creation
+- **Auth:** JWT with role-based access control (5 roles)
+- **Deployment:** Vercel
+
+## Key Features
+
+### 1. Role-Based Access Control
+
+The system has 5 roles: Admin, Manager, Member, Viewer, and Guest. Each role has a specific permission matrix that controls what actions are available.
+
+![User interface showing different user roles and permissions](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+### 2. Expense Tracking
+
+Users can log expenses with categories, dates, and amounts. The dashboard shows spending trends with interactive charts.
+
+![Expense tracking spreadsheet with categories](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop)
+
+### 3. Budget Management
+
+Set monthly budgets per category and get alerts when approaching limits. The system tracks actual vs. planned spending.
+
+![Budget planning with calculator and charts](https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=400&fit=crop)
+
+### 4. Savings Goals
+
+Create savings goals with target amounts and deadlines. Track progress over time with visual indicators.
+
+![Savings jar with money growing](https://images.unsplash.com/photo-1579621970588-a35d0e7dd9b0?w=800&h=400&fit=crop)
+
+## Challenges
+
+The biggest challenge was implementing the auto-schema creation on deployment. When the app boots, it checks if the database schema exists and creates it if needed, including seeding default roles.
+
+![Database schema visualization on screen](https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop)
+
+## Results
+
+- Deployed on Vercel with zero downtime
+- 5-role RBAC with proper permission guards
+- Real-time charts and visualizations
+- Auto-schema creation on boot
+
+## What I Learned
+
+This project taught me a lot about database design, authentication patterns, and deploying full-stack applications. The experience of building something real — not just a tutorial — was invaluable.

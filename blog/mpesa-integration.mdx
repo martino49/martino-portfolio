@@ -1,0 +1,80 @@
+---
+title: "Integrating M-Pesa Payments in a Node.js Application"
+date: "2026-08-10"
+tags: ["Node.js", "M-Pesa", "API", "Payment"]
+cover: "https://images.unsplash.com/photo-1563986768609-322da13575f2?w=1200&h=600&fit=crop"
+excerpt: "A practical guide to integrating Safaricom's M-Pesa Daraja API into a Node.js backend — from STK push to callbacks."
+readingTime: 5
+---
+
+## Why M-Pesa?
+
+M-Pesa is the dominant mobile money platform in Kenya and across East Africa. For any fintech or e-commerce app targeting this market, M-Pesa integration isn't optional — it's essential.
+
+![Person using mobile phone for mobile money transfer](https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&h=400&fit=crop)
+
+## Getting Started with Daraja API
+
+Safaricom provides the Daraja API for M-Pesa integration. You'll need:
+- A Safaricom developer account
+- Consumer key and secret
+- An approved paybill or till number
+
+![API documentation and developer setup](https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=400&fit=crop)
+
+## STK Push Implementation
+
+The most common integration is STK Push — prompting the user's phone to enter their PIN and complete the payment.
+
+```javascript
+const stkPush = async (phone, amount) => {
+  const timestamp = formatDate();
+  const password = Buffer.from(
+    `${shortcode}${passkey}${timestamp}`
+  ).toString('base64');
+
+  const { data } = await axios.post(
+    'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest',
+    {
+      BusinessShortCode: shortcode,
+      Password: password,
+      Timestamp: timestamp,
+      TransactionType: 'CustomerPayBillOnline',
+      Amount: amount,
+      PartyA: phone,
+      PartyB: shortcode,
+      PhoneNumber: phone,
+      CallBackURL: `${BASE_URL}/mpesa/callback`,
+      AccountReference: 'FinMate',
+      TransactionDesc: 'Payment',
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }
+  );
+  return data;
+};
+```
+
+## Handling Callbacks
+
+M-Pesa sends a callback to your server with the transaction result. You need to verify the transaction and update your database.
+
+![Server rack handling API callbacks](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop)
+
+## Error Handling
+
+Common issues include:
+- **Timeout errors:** M-Pesa callbacks can be delayed
+- **Duplicate transactions:** Implement idempotency checks
+- **Validation failures:** Always verify the callback signature
+
+![Error monitoring and logging dashboard](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+## Results
+
+The integration processes payments in real-time with proper error handling and transaction verification.
+
+![Successful mobile payment confirmation](https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&h=400&fit=crop)

@@ -1,0 +1,220 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Martin Omondo",
+    "label": "Full-Stack Web & Android Developer",
+    "image": "/avatar.jpg",
+    "email": "omondo906@gmail.com",
+    "phone": "+254 116 309 194",
+    "summary": "Year 2 BSIT student at Karatina University and a full-stack developer who\nbuilds real software, not tutorials. Completed full-stack web development\ntraining at Eldohub (August 2025), then kept building — 65+ repos and\nprojects, several worked on with other developers. Delivered a paid client\nproject (a React fundraising app, PERN stack) from idea to deployment.\n\nStrengths: full-stack web development (React, Express, Node, PostgreSQL/MySQL)\nand Android development (Kotlin), with real payment integrations (M-Pesa,\nPaystack, PayPal, Stripe) and deployments on Vercel, Render and AlwaysData.\n\nI don't claim years of experience I don't have — I claim shipped projects,\nworking payments, and the discipline to deliver on time.\n",
+    "location": {
+      "city": "Nairobi",
+      "region": "Kenya"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "url": "https://github.com/martino49",
+        "username": "martino49"
+      },
+      {
+        "network": "Twitter",
+        "url": "https://twitter.com/martinomondo",
+        "username": "martinomondo"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Self-employed",
+      "position": "Developer (Freelance / Starting Out)",
+      "startDate": "2025",
+      "endDate": "",
+      "summary": "Building my portfolio and client pipeline toward full-time software\nengineering. Honest about experience level, disciplined with deadlines,\nships small and often.\n",
+      "highlights": [
+        "Delivered first paid client project (React fundraising app, PERN stack)",
+        "Built and maintain 7 portfolio projects across web, Android, and desktop",
+        "65+ repos of self-driven projects incl. payment integrations"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Karatina University",
+      "area": "Bachelor of Science in Information Technology (BSIT)",
+      "studyType": "",
+      "startDate": "2025",
+      "endDate": ""
+    },
+    {
+      "institution": "Eldohub",
+      "area": "Full-Stack Web Development",
+      "studyType": "",
+      "startDate": "2025 (completed August)",
+      "endDate": ""
+    }
+  ],
+  "skills": [
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "EJS",
+        "Tailwind CSS",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Node.js",
+        "Express",
+        "REST APIs",
+        "Socket.io"
+      ]
+    },
+    {
+      "name": "Databases",
+      "keywords": [
+        "MySQL",
+        "PostgreSQL",
+        "Supabase"
+      ]
+    },
+    {
+      "name": "Mobile",
+      "keywords": [
+        "Kotlin",
+        "MVVM",
+        "Room"
+      ]
+    },
+    {
+      "name": "Payments",
+      "keywords": [
+        "M-Pesa (Daraja)",
+        "Paystack",
+        "PayPal",
+        "Stripe"
+      ]
+    },
+    {
+      "name": "Deployment",
+      "keywords": [
+        "Vercel",
+        "Render",
+        "AlwaysData"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "FinMate — Role-Based Finance System",
+      "description": "Full finance platform for individuals and teams: expenses, budgets, savings, planned purchases. 5-role RBAC with a permission matrix and guarded routes. Deployed on Vercel; auto-creates schema + seeds roles on boot.",
+      "keywords": [
+        "Node.js",
+        "Express",
+        "EJS",
+        "MySQL",
+        "JWT",
+        "Chart.js"
+      ],
+      "url": "https://fin-mate-three.vercel.app"
+    },
+    {
+      "name": "EDU LMS — Learning Management System",
+      "description": "5-role LMS: courses, assignments, grading, attendance, fee payments, audit logging. Security-first: helmet CSP, rate-limited auth, validated inputs — with a passing Jest + supertest suite.",
+      "keywords": [
+        "Node.js",
+        "Express",
+        "EJS",
+        "MySQL",
+        "Jest"
+      ],
+      "url": "https://edulms-iota.vercel.app"
+    },
+    {
+      "name": "Cdely — Multi-Vendor E-Commerce & Delivery",
+      "description": "4-role platform (customer/seller/rider/admin) with a 30+ table schema. Checkout with M-Pesa (Daraja STK), Paystack, and cash-on-delivery, plus real-time order tracking.",
+      "keywords": [
+        "Node.js",
+        "Express",
+        "EJS",
+        "MySQL",
+        "Socket.io",
+        "M-Pesa",
+        "Google Maps"
+      ],
+      "url": "https://github.com/martino49/cdely"
+    },
+    {
+      "name": "AgroLink — Agricultural Marketplace",
+      "description": "Farmer/buyer/supplier marketplace with product listings, orders, reviews. Real-time buyer–seller chat via Socket.io, persisted to MySQL.",
+      "keywords": [
+        "Node.js",
+        "Express",
+        "EJS",
+        "MySQL",
+        "Socket.io"
+      ],
+      "url": "https://github.com/martino49/AgroLink"
+    },
+    {
+      "name": "Fundraising App — Paid Client Work",
+      "description": "Built with a friend for a real client: user accounts, campaign pages, donations, and an admin view. My first paid project and proof of taking an idea from zero to deployed.",
+      "keywords": [
+        "React",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Supabase",
+        "Vercel"
+      ],
+      "url": "https://github.com/martino49/fundraising-app"
+    },
+    {
+      "name": "LiteLink — PC ↔ Android Companion Suite",
+      "description": "Self-hosted KDE-Connect-style bridge: screen mirroring, notifications, folder sync, clipboard, M-Pesa tracker. 86 tracked features, no cloud.",
+      "keywords": [
+        "Python",
+        "PySide6",
+        "Kotlin",
+        "WebSocket",
+        "scrcpy"
+      ],
+      "url": "https://github.com/martino49/LiteLink"
+    },
+    {
+      "name": "FSPEDX — Android Game Performance Booster",
+      "description": "30+ working features for budget phones: RAM/thermal tuning, FPS overlays, touch heatmaps, session replay.",
+      "keywords": [
+        "Kotlin",
+        "MVVM",
+        "Room",
+        "K-Means"
+      ],
+      "url": "https://github.com/martino49/FSPEDX"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Full-Stack Web Development",
+      "issuer": "Eldohub",
+      "date": "August 2025",
+      "url": ""
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    },
+    {
+      "language": "Kiswahili",
+      "fluency": "Fluent"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+---
+title: "Deploying Full-Stack Apps: Vercel, Render, and AlwaysData"
+date: "2026-07-20"
+tags: ["DevOps", "Vercel", "Deployment"]
+cover: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=600&fit=crop"
+excerpt: "A practical guide to deploying full-stack applications across multiple platforms — lessons learned from real projects."
+readingTime: 6
+---
+
+## The Deployment Landscape
+
+Deploying full-stack apps can be overwhelming. After deploying multiple projects, I've settled on a reliable stack: Vercel for frontend, Render for backend APIs, and AlwaysData for databases.
+
+![Server room with multiple racks](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop)
+
+## Vercel: Frontend Deployment
+
+Vercel is my go-to for React/Vite frontends. The workflow is simple:
+1. Connect your GitHub repository
+2. Vercel auto-detects the framework
+3. Every push to `main` triggers a deployment
+4. Preview deployments for pull requests
+
+![Vercel deployment dashboard](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+## Render: Backend APIs
+
+For Node.js/Express backends, Render provides:
+- Free tier for hobby projects
+- Automatic deploys from Git
+- Environment variable management
+- Custom domains with SSL
+
+![Cloud server infrastructure](https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop)
+
+## AlwaysData: Database Hosting
+
+AlwaysData offers free PostgreSQL hosting with:
+- 100MB free storage
+- Remote database access
+- phpMyAdmin for management
+- Reliable uptime
+
+![Database management interface](https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop)
+
+## Environment Variables
+
+The most common deployment issue is environment variables. Always verify:
+- All secrets are in the platform's environment variables
+- No hardcoded URLs or API keys
+- Database URLs use the correct format
+
+![Configuration and environment setup](https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop)
+
+## Common Pitfalls
+
+1. **CORS issues:** Ensure your backend allows requests from your frontend domain
+2. **Build errors:** Test builds locally before pushing
+3. **Database migrations:** Run migrations after deployment
+4. **Cold starts:** Free tiers have cold start delays
+
+![Monitoring deployment logs](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+
+## My Deployment Checklist
+
+- [ ] Environment variables configured
+- [ ] CORS headers set correctly
+- [ ] Database migrations run
+- [ ] Build succeeds locally
+- [ ] Test all API endpoints
+- [ ] Check SSL certificates
+- [ ] Monitor error logs
+
+![Successful deployment pipeline](https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop)
+
+## Results
+
+With this setup, I've deployed 5+ projects with zero downtime. The free tiers cover most portfolio needs.
