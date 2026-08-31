@@ -1,8 +1,8 @@
 ---
 title: "Building FinMate: A Full-Stack Finance Platform"
 date: "2026-08-15"
-tags: ["React", "Node.js", "MySQL", "Full-Stack"]
-cover: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=600&fit=crop"
+tags: ["Node.js", "Express", "MySQL", "Full-Stack"]
+cover: "/images/finmate/01-login.png"
 excerpt: "How I built a role-based finance management system with expense tracking, budgets, and savings goals — from concept to deployment."
 readingTime: 6
 ---
@@ -11,57 +11,147 @@ readingTime: 6
 
 FinMate started as a personal project. I needed a way to track my expenses, set budgets, and manage savings goals — but most finance apps were either too complex or too simple.
 
-![Dashboard with charts and graphs showing financial data](https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop)
+![FinMate Login Page — clean, branded authentication with navy/teal theme](/images/finmate/01-login.png)
 
 I wanted to build something that could work for both individuals and teams, with proper role-based access control.
 
 ## Tech Stack
 
-- **Frontend:** EJS templates with Chart.js for visualizations
+- **Frontend:** EJS templates with Bootstrap 5 and Chart.js
 - **Backend:** Node.js + Express
 - **Database:** MySQL with auto-schema creation
-- **Auth:** JWT with role-based access control (5 roles)
-- **Deployment:** Vercel
+- **Auth:** JWT with HTTP-only cookies, role-based access control (5 roles)
+- **Security:** Helmet, rate limiting, input sanitization, compression
 
 ## Key Features
 
 ### 1. Role-Based Access Control
 
-The system has 5 roles: Admin, Manager, Member, Viewer, and Guest. Each role has a specific permission matrix that controls what actions are available.
+The system has 5 roles: Super Admin, Admin, Team Leader, Team Member, and Individual User. Each role has a dedicated dashboard and permission-guarded routes.
 
-![User interface showing different user roles and permissions](https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop)
+![Individual User Dashboard — overview of daily expenses, budgets, savings progress, and recent transactions](/images/finmate/02-user-dashboard.png)
 
 ### 2. Expense Tracking
 
-Users can log expenses with categories, dates, and amounts. The dashboard shows spending trends with interactive charts.
+Users can log expenses with categories, dates, and amounts. The dashboard shows spending trends with interactive charts, and filters let you drill down by period and category.
 
-![Expense tracking spreadsheet with categories](https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=400&fit=crop)
+![Expense Management — full CRUD with filters, summary stats, and category breakdown](/images/finmate/03-user-expenses.png)
 
 ### 3. Budget Management
 
-Set monthly budgets per category and get alerts when approaching limits. The system tracks actual vs. planned spending.
+Set monthly, weekly, or yearly budgets per category. The system tracks actual vs. planned spending and shows progress bars for each budget.
 
-![Budget planning with calculator and charts](https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=400&fit=crop)
+![Budget Management — create, edit, and track budgets with progress indicators](/images/finmate/04-user-budgets.png)
 
 ### 4. Savings Goals
 
-Create savings goals with target amounts and deadlines. Track progress over time with visual indicators.
+Create savings goals with target amounts and deadlines. Track progress over time with visual indicators and make deposits toward each goal.
 
-![Savings jar with money growing](https://images.unsplash.com/photo-1579621970588-a35d0e7dd9b0?w=800&h=400&fit=crop)
+![Savings Goals — set targets, track deposits, and monitor progress](/images/finmate/05-user-savings.png)
+
+### 5. Income Tracking
+
+Record income by source and category. Filter by status (pending, confirmed) and time period to get a clear picture of cash flow.
+
+![Income Tracking — log and manage income sources with status filters](/images/finmate/06-user-incomes.png)
+
+### 6. Analytics Dashboard
+
+Visual analytics with Chart.js for spending patterns, budget utilization, and category breakdowns. Helps users understand where their money goes.
+
+![Analytics — interactive charts showing spending patterns and budget utilization](/images/finmate/07-user-analytics.png)
+
+## Team Collaboration
+
+### Team Leader Dashboard
+
+Team leaders see an overview of their team's activity — pending expenses, total spending, and recent submissions from members.
+
+![Team Leader Dashboard — team overview with pending approvals and spending stats](/images/finmate/08-teamleader-dashboard.png)
+
+### Team Management
+
+Leaders can view their team members, approve or reject expense submissions, and manage team settings.
+
+![Team Management — view members and manage team settings](/images/finmate/09-teamleader-teams.png)
+
+### Expense Approval
+
+Team leaders review and approve/reject expenses submitted by team members, with comments and status tracking.
+
+![Expense Approval — review team member expenses with approve/reject actions](/images/finmate/10-teamleader-expenses.png)
+
+## Admin Panel
+
+### Admin Dashboard
+
+Admins get a system-wide overview: total users, budgets, expenses, pending approvals, and team stats.
+
+![Admin Dashboard — system-wide stats and quick actions](/images/finmate/11-admin-dashboard.png)
+
+### User Management
+
+Full user CRUD with role assignment, team assignment, password resets, and activity history.
+
+![User Management — create, edit, and manage all users with role-based access](/images/finmate/12-admin-users.png)
+
+### Team Administration
+
+Create and manage teams, assign team leaders, and view team performance metrics.
+
+![Team Administration — create teams and assign leaders](/images/finmate/13-admin-teams.png)
+
+### Reports & Analytics
+
+Financial reports with expense stats, budget utilization, monthly trends, category breakdowns, and export to CSV/JSON.
+
+![Reports — financial analytics with export options](/images/finmate/14-admin-reports.png)
+
+## Super Admin
+
+### Platform Dashboard
+
+Super admins have full platform visibility: all users, roles, permissions, audit logs, and system settings.
+
+![Super Admin Dashboard — complete platform overview](/images/finmate/15-superadmin-dashboard.png)
+
+### Role & Permission Management
+
+Manage roles and their permission matrices. Control exactly what each role can do across the system.
+
+![Role Management — configure roles and permissions](/images/finmate/17-superadmin-roles.png)
+
+### Audit Logs
+
+Track all system actions with timestamps, user attribution, and detailed metadata for security and compliance.
+
+![Audit Logs — track all system activity for security](/images/finmate/18-superadmin-auditlogs.png)
 
 ## Challenges
 
-The biggest challenge was implementing the auto-schema creation on deployment. When the app boots, it checks if the database schema exists and creates it if needed, including seeding default roles.
+The biggest challenge was implementing the auto-schema creation on deployment. When the app boots, it checks if the database schema exists and creates it if needed, including seeding default roles, permissions, and role-permission mappings.
 
-![Database schema visualization on screen](https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=400&fit=crop)
+Another significant challenge was designing the unified sidebar — a single EJS partial that adapts its navigation based on the user's role, with collapse persistence, mobile responsive overlay, and consistent logout styling across all views.
+
+## Security
+
+- **Helmet** — Sets secure HTTP headers
+- **Rate limiting** — 100 requests/15min on API routes
+- **Input sanitization** — Strips XSS vectors on mutation routes
+- **JWT + HTTP-only cookies** — Tokens not accessible via JavaScript
+- **bcryptjs** — Password hashing with salt rounds
+- **SQL injection protection** — Parameterized queries throughout
+- **Compression** — gzip response compression
 
 ## Results
 
-- Deployed on Vercel with zero downtime
 - 5-role RBAC with proper permission guards
+- 209 routes across all roles
 - Real-time charts and visualizations
 - Auto-schema creation on boot
+- Unified responsive sidebar
+- Security hardened (Helmet, rate limiting, sanitization)
 
 ## What I Learned
 
-This project taught me a lot about database design, authentication patterns, and deploying full-stack applications. The experience of building something real — not just a tutorial — was invaluable.
+This project taught me a lot about database design, authentication patterns, role-based access control, and deploying full-stack applications. Building something real — not just a tutorial — was invaluable. The complexity of managing 5 different user roles, each with their own dashboard and permission set, gave me deep appreciation for well-designed authorization systems.
