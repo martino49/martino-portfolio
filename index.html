@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <script>
       (function() {
-        var t = localStorage.getItem('theme');
+        var t = localStorage.getItem('portfolio-theme') || localStorage.getItem('theme');
         if (t === 'light') document.documentElement.classList.remove('dark');
         else document.documentElement.classList.add('dark');
       })();

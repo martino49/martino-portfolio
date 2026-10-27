@@ -12,7 +12,8 @@ function Avatar() {
         <div
           className="absolute -inset-8 opacity-50 blur-3xl"
           style={{
-            background: 'radial-gradient(circle, rgba(10,23,78,0.6), rgba(30,58,138,0.4), transparent 70%)',
+            background:
+              'radial-gradient(circle, rgba(10,23,78,0.6), rgba(30,58,138,0.4), transparent 70%)',
             animation: 'morph 8s ease-in-out infinite',
           }}
         />
@@ -43,7 +44,8 @@ function Avatar() {
       <div
         className="absolute -inset-8 opacity-50 blur-3xl"
         style={{
-          background: 'radial-gradient(circle, rgba(10,23,78,0.6), rgba(30,58,138,0.4), transparent 70%)',
+          background:
+            'radial-gradient(circle, rgba(10,23,78,0.6), rgba(30,58,138,0.4), transparent 70%)',
           animation: 'morph 8s ease-in-out infinite',
         }}
       />
@@ -92,6 +94,21 @@ function TypewriterText({ text }: { text: string }) {
         <span className="bg-primary ml-0.5 inline-block h-4 w-0.5 animate-pulse align-middle" />
       )}
     </p>
+  );
+}
+
+function HeroName() {
+  const parts = config.name.trim().split(/\s+/);
+  const first = parts[0] ?? '';
+  const restInitials = parts
+    .slice(1)
+    .map((w) => w[0])
+    .join('');
+  return (
+    <>
+      <span>{first} </span>
+      <span className="italic">{restInitials ? `${restInitials}.` : ''}</span>
+    </>
   );
 }
 
@@ -150,8 +167,7 @@ export function Hero() {
             className="flex flex-col items-center gap-3 md:items-start"
           >
             <h1 className="text-foreground font-serif text-6xl leading-none font-light tracking-tight md:text-8xl">
-              <span>Martin </span>
-              <span className="italic">O.</span>
+              <HeroName />
             </h1>
 
             <p className="text-primary mt-1 text-sm font-medium tracking-[0.22em] uppercase">
@@ -235,7 +251,7 @@ export function Hero() {
             className="flex flex-wrap items-center justify-center gap-3 md:justify-start"
           >
             <a
-              href="#projects"
+              href="/projects"
               className="bg-primary text-primary-foreground rounded-xl px-7 py-3 text-sm font-medium tracking-wide transition-opacity hover:opacity-90"
               data-testid="button-view-work"
             >

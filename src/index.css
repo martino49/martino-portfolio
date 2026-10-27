@@ -74,8 +74,12 @@ html {
 
 /* Page fade-in on load to prevent white flash */
 @keyframes pageFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 #root {
@@ -268,7 +272,9 @@ html {
   html {
     scroll-behavior: auto;
   }
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: var(--app-font-display);
   }
 }
@@ -565,14 +571,14 @@ html {
   }
 
   /* Footer — keep contact info, strip the rest */
-  footer#contact {
+  #contact {
     page-break-before: avoid;
     border-top: 1px solid #e0e0e0 !important;
     padding: 1rem 0 0.5rem !important;
     background: none !important;
   }
 
-  footer p.text-xs.text-muted-foreground {
+  #contact p.text-xs.text-muted-foreground {
     color: #999 !important;
     font-size: 0.6rem !important;
   }

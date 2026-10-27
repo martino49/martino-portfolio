@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Award, ExternalLink, Smartphone } from 'lucide-react';
+import { Award, ExternalLink } from 'lucide-react';
 import { config } from '@/portfolio.config';
 import { fadeUpVariants } from '@/lib/animation';
 
@@ -33,46 +33,6 @@ export function Certifications() {
         </motion.h2>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {/* Self-trained Android Developer badge */}
-          <motion.div
-            variants={fadeUp}
-            custom={2}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-60px' }}
-            className="group border-border bg-card relative flex flex-col gap-4 rounded-2xl border p-6 transition-all hover:border-primary/30 hover:shadow-lg"
-          >
-            <div className="flex items-start gap-4">
-              <div className="bg-primary/10 text-primary flex h-14 w-14 shrink-0 items-center justify-center rounded-xl">
-                <Smartphone size={24} />
-              </div>
-              <div className="min-w-0 flex-1">
-                <h3 className="text-foreground text-sm leading-snug font-medium">
-                  Android App Developer
-                </h3>
-                <p className="text-muted-foreground mt-1 text-xs">
-                  Self-taught
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-              <span className="border-border bg-secondary text-muted-foreground rounded-full border px-2 py-0.5 font-mono text-xs">
-                Kotlin
-              </span>
-              <span className="border-border bg-secondary text-muted-foreground rounded-full border px-2 py-0.5 font-mono text-xs">
-                MVVM
-              </span>
-              <span className="border-border bg-secondary text-muted-foreground rounded-full border px-2 py-0.5 font-mono text-xs">
-                Room
-              </span>
-            </div>
-            <div className="border-border mt-auto flex items-center border-t pt-2">
-              <span className="text-muted-foreground font-mono text-xs">
-                2024 – present
-              </span>
-            </div>
-          </motion.div>
-
           {config.certifications.map((cert, i) => (
             <motion.div
               key={`${cert.title}-${i}`}

@@ -158,6 +158,8 @@ export interface ResumeTheme {
 
 export const config = {
   ...rawConfig,
+  resumeUrl: rawConfig.resumeUrl ?? '',
+  resumeFileName: rawConfig.resumeFileName ?? '',
   colorPreset: rawConfig.colorPreset as ColorPreset,
   defaultTheme: rawConfig.defaultTheme as 'system' | 'light' | 'dark',
   siteMode: (rawConfig.siteMode ?? 'portfolio') as 'landing' | 'portfolio',

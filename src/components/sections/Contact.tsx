@@ -69,7 +69,7 @@ export function Contact() {
   }
 
   return (
-    <footer
+    <section
       id="contact"
       className="border-border/60 bg-card/30 border-t px-6 py-32"
     >
@@ -305,8 +305,8 @@ export function Contact() {
             className="flex flex-wrap items-center justify-center gap-3"
           >
             <a
-              href={config.resumeUrl}
-              download={config.resumeFileName}
+              href={config.resumeUrl || '/resume'}
+              download={config.resumeUrl ? config.resumeFileName : undefined}
               className="border-border text-foreground hover:bg-secondary hover:border-primary/40 flex items-center gap-2 rounded-xl border px-5 py-2.5 text-sm font-medium transition-all"
               data-testid="button-download-resume-footer"
             >
@@ -341,6 +341,6 @@ export function Contact() {
           </motion.div>
         </div>
       </div>
-    </footer>
+    </section>
   );
 }

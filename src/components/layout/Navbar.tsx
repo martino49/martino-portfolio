@@ -38,7 +38,9 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
     } else {
       document.body.style.overflow = '';
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [mobileOpen]);
 
   const links = config.blog?.enabled
@@ -86,7 +88,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
           <div className="flex flex-shrink-0 items-center gap-2">
             <a
               href="/resume"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 relative hidden items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium tracking-widest uppercase transition-colors md:inline-flex"
+              className="group bg-primary text-primary-foreground hover:bg-primary/90 relative hidden items-center gap-1.5 rounded-lg px-3 py-2 text-xs font-medium tracking-widest uppercase transition-colors md:inline-flex"
               aria-label="Download CV"
             >
               <Download size={14} />
@@ -132,7 +134,7 @@ export function Navbar({ theme, onToggleTheme }: NavbarProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background/98 backdrop-blur-xl md:hidden"
+            className="bg-background/98 fixed inset-0 z-[60] backdrop-blur-xl md:hidden"
           >
             <div className="flex h-full flex-col items-center justify-center gap-8">
               {links.map((l, i) => (

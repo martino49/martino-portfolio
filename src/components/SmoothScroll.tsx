@@ -36,7 +36,7 @@ export function SmoothScrollProvider({
       const href = anchor.getAttribute('href');
       if (!href || href.includes('/')) return;
       const target = document.querySelector(href);
-      if (!target) return;
+      if (!target) return; // No matching section on this page — let the browser handle it
       e.preventDefault();
       lenis.scrollTo(target as HTMLElement, { offset: -64, duration: 1.6 });
     };

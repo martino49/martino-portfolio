@@ -16,7 +16,7 @@ tagline: "I build real software — shipped projects, working payments, on-time 
 email: "omondo906@gmail.com"
 phone: "+254 116 309 194"
 location: "Nairobi, Kenya"
-avatarUrl: "/avatar.jpg"   # Placeholder — replace with your real photo
+avatarUrl: "/avatar.jpg"   # TODO: replace with real photo (e.g. https://github.com/martino49.png or upload to public/)
 
 # ── Resume download ─────────────────────────────────────────────────────
 # Leave blank → the navbar "Resume" button opens the built-in generated resume.
@@ -52,7 +52,7 @@ sections:
 # ── Social links ────────────────────────────────────────────────────────
 social:
   github:   "https://github.com/martino49"
-  linkedin: ""       # Skipped for now
+  linkedin: ""       # TODO: add your LinkedIn URL (recruiter #1 channel)
   twitter:  "https://twitter.com/martinomondo"
   website:  ""
 
@@ -74,7 +74,7 @@ about: |
 # ── Stats (verifiable proof points) ─────────────────────────────────────
 stats:
   - { label: "Portfolio Projects", value: 7,  suffix: ""  }
-  - { label: "Repos & Projects",    value: 65, suffix: "+" }
+  - { label: "Live Deployments",   value: 2,  suffix: ""  }
   - { label: "Paid Client Delivery",value: 1,  suffix: ""  }
   - { label: "Payment Integrations",value: 5,  suffix: ""  }
 
@@ -120,11 +120,13 @@ projects:
     liveUrl: "https://fin-mate-three.vercel.app"
     repoUrl: "https://github.com/martino49/FinMateV2"
     featured: true
-    image: "https://placehold.co/600x400/0A174E/ffffff?text=FinMate"
+    image: "/images/finmate/02-user-dashboard.png"
     screenshots:
-      - "https://placehold.co/800x500/0A174E/ffffff?text=FinMate+Dashboard"
-      - "https://placehold.co/800x500/1e3a8a/ffffff?text=FinMate+Expenses"
-      - "https://placehold.co/800x500/0A174E/ffffff?text=FinMate+Reports"
+      - "/images/finmate/02-user-dashboard.png"
+      - "/images/finmate/03-user-expenses.png"
+      - "/images/finmate/04-user-budgets.png"
+      - "/images/finmate/11-admin-dashboard.png"
+      - "/images/finmate/18-superadmin-auditlogs.png"
     caseStudy: "Built a full finance platform with 5-role RBAC, expense tracking, budget management, and savings goals. Used JWT auth with guarded routes, Chart.js for visualizations, and deployed on Vercel with auto-schema creation."
 
   - name: "EDU LMS — Learning Management System"
@@ -133,24 +135,14 @@ projects:
     liveUrl: "https://edulms-iota.vercel.app"
     repoUrl: "https://github.com/martino49/edu-lms"
     featured: true
-    image: "https://placehold.co/600x400/0A174E/ffffff?text=EDU+LMS"
     screenshots:
-      - "https://placehold.co/800x500/0A174E/ffffff?text=LMS+Dashboard"
-      - "https://placehold.co/800x500/1e3a8a/ffffff?text=LMS+Courses"
-      - "https://placehold.co/800x500/0A174E/ffffff?text=LMS+Grading"
-    caseStudy: "Designed a secure LMS with 5 roles, course management, assignment grading, attendance tracking, and fee payments. Implemented helmet CSP, rate limiting, input validation, and comprehensive Jest + supertest coverage."
-
   - name: "Cdely — Multi-Vendor E-Commerce & Delivery"
     description: "4-role platform (customer/seller/rider/admin) with a 30+ table schema. Checkout with M-Pesa (Daraja STK), Paystack, and cash-on-delivery, plus real-time order tracking."
     tags: [Node.js, Express, EJS, MySQL, Socket.io, M-Pesa, Google Maps]
     liveUrl: ""
     repoUrl: "https://github.com/martino49/cdely"
     featured: true
-    image: "https://placehold.co/600x400/0A174E/ffffff?text=Cdely"
     screenshots:
-      - "https://placehold.co/800x500/0A174E/ffffff?text=Cdely+Marketplace"
-      - "https://placehold.co/800x500/1e3a8a/ffffff?text=Cdely+Checkout"
-      - "https://placehold.co/800x500/0A174E/ffffff?text=Cdely+Tracking"
     caseStudy: "Built a multi-vendor e-commerce platform with 4 roles, 30+ database tables, M-Pesa integration via Daraja STK, Paystack payments, cash-on-delivery, and real-time order tracking with Socket.io."
 
   - name: "AgroLink — Agricultural Marketplace"
@@ -159,7 +151,6 @@ projects:
     liveUrl: ""
     repoUrl: "https://github.com/martino49/AgroLink"
     featured: false
-    image: "https://placehold.co/600x400/0A174E/ffffff?text=AgroLink"
 
   - name: "Fundraising App — Paid Client Work"
     description: "Built with a friend for a real client: user accounts, campaign pages, donations, and an admin view. My first paid project and proof of taking an idea from zero to deployed."
@@ -167,7 +158,6 @@ projects:
     liveUrl: ""
     repoUrl: "https://github.com/martino49/fundraising-app"
     featured: false
-    image: "https://placehold.co/600x400/0A174E/ffffff?text=Fundraising"
 
   - name: "LiteLink — PC ↔ Android Companion Suite"
     description: "Self-hosted KDE-Connect-style bridge: screen mirroring, notifications, folder sync, clipboard, M-Pesa tracker. 86 tracked features, no cloud."
@@ -175,7 +165,6 @@ projects:
     liveUrl: ""
     repoUrl: "https://github.com/martino49/LiteLink"
     featured: false
-    image: "https://placehold.co/600x400/0A174E/ffffff?text=LiteLink"
 
   - name: "FSPEDX — Android Game Performance Booster"
     description: "30+ working features for budget phones: RAM/thermal tuning, FPS overlays, touch heatmaps, session replay."
@@ -183,7 +172,6 @@ projects:
     liveUrl: ""
     repoUrl: "https://github.com/martino49/FSPEDX"
     featured: false
-    image: "https://placehold.co/600x400/0A174E/ffffff?text=FSPEDX"
 
 # ── Education ───────────────────────────────────────────────────────────
 education:
@@ -202,6 +190,12 @@ certifications:
     credentialUrl: ""
     badgeUrl: ""
     tags: [Full-Stack, Web, JavaScript]
+  - title: "Android App Development"
+    issuer: "Self-taught"
+    date: "2025 – present"
+    credentialUrl: ""
+    badgeUrl: ""
+    tags: [Kotlin, MVVM, Room]
 
 # ── Publications ────────────────────────────────────────────────────────
 publications: []
